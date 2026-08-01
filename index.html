@@ -3,25 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FORESCAT · Asesoría Financiera y Contable</title>
-<meta name="description" content="FORESCAT — Asesoría financiera y contable integral para empresas y emprendedores.">
+<title>Forecast Consultor Contable · Asesoría contable, fiscal y administrativa</title>
+<meta name="description" content="Forecast Consultor Contable — asesoría contable, fiscal, laboral y administrativa para empresas y personas físicas.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#0A2036;
-    --ink-soft:#123049;
-    --parchment:#F1F4F2;
+    --navy:#0A1C3D;
+    --navy-soft:#122A57;
+    --blue:#1B57D6;
+    --blue-light:#4C86FF;
+    --bg:#F4F7FC;
     --paper:#FFFFFF;
-    --brass:#B8935A;
-    --brass-dark:#96733E;
-    --teal:#123B36;
-    --text:#1B1F23;
-    --text-soft:#4B5560;
-    --line: rgba(10,32,54,0.14);
-    --radius: 4px;
-    --maxw: 1120px;
+    --text:#101828;
+    --text-soft:#55607A;
+    --line:rgba(10,28,61,0.12);
+    --radius:8px;
+    --maxw:1160px;
   }
 
   *{ box-sizing:border-box; }
@@ -30,7 +29,7 @@
     margin:0;
     font-family:'Inter', sans-serif;
     color:var(--text);
-    background:var(--parchment);
+    background:var(--bg);
     line-height:1.6;
     -webkit-font-smoothing:antialiased;
   }
@@ -38,19 +37,18 @@
     font-family:'Fraunces', serif;
     font-weight:600;
     margin:0 0 .5em 0;
-    color:var(--ink);
+    color:var(--navy);
     letter-spacing:-0.01em;
   }
   a{ color:inherit; }
   img{ max-width:100%; display:block; }
   .wrap{ max-width:var(--maxw); margin:0 auto; padding:0 24px; }
   .eyebrow{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:.72rem;
-    letter-spacing:.14em;
+    font-size:.74rem;
+    letter-spacing:.16em;
     text-transform:uppercase;
-    color:var(--brass-dark);
-    font-weight:600;
+    color:var(--blue);
+    font-weight:700;
     margin-bottom:.9em;
     display:inline-flex;
     align-items:center;
@@ -58,59 +56,49 @@
   }
   .eyebrow::before{
     content:"";
-    width:22px; height:1px;
-    background:var(--brass-dark);
+    width:22px; height:2px;
+    background:var(--blue);
     display:inline-block;
-  }
-
-  /* Ledger double-rule: signature element referencing the accounting convention
-     of a double underline marking a closed total. */
-  .ledger-rule{
-    height:6px;
-    background-image:
-      linear-gradient(var(--line), var(--line));
-    background-size:100% 1px;
-    background-repeat:no-repeat;
-    background-position: top, bottom;
-  }
-  .ledger-rule{
-    border-top:1px solid var(--line);
-    border-bottom:1px solid var(--line);
-    height:4px;
+    border-radius:2px;
   }
 
   a.skip-link{
     position:absolute; left:-999px; top:auto;
-    background:var(--ink); color:#fff; padding:10px 16px; z-index:200;
+    background:var(--navy); color:#fff; padding:10px 16px; z-index:200;
   }
   a.skip-link:focus{ left:16px; top:16px; }
+
+  /* Logo mark: F estilizada en degradado azul */
+  .logo-mark{
+    width:40px; height:40px;
+    flex:none;
+  }
 
   /* Header */
   header{
     position:sticky; top:0; z-index:100;
-    background:var(--ink);
+    background:var(--navy);
     border-bottom:1px solid rgba(255,255,255,.08);
   }
   .nav{
     display:flex; align-items:center; justify-content:space-between;
-    padding:16px 24px;
+    padding:14px 24px;
   }
   .brand{
     display:flex; align-items:center; gap:12px;
     color:#fff; text-decoration:none;
   }
-  .brand img{ height:42px; width:auto; border-radius:3px; }
   .brand-name{
     font-family:'Fraunces', serif;
     font-weight:600;
-    font-size:1.25rem;
+    font-size:1.3rem;
     color:#fff;
-    letter-spacing:.02em;
+    letter-spacing:.06em;
+    display:block;
   }
   .brand-tag{
-    font-family:'IBM Plex Mono', monospace;
     font-size:.62rem;
-    letter-spacing:.12em;
+    letter-spacing:.18em;
     text-transform:uppercase;
     color:rgba(255,255,255,.55);
     display:block;
@@ -127,16 +115,17 @@
     transition:background .2s, color .2s;
   }
   nav.links a:hover, nav.links a:focus-visible{
-    background:rgba(255,255,255,.08);
+    background:rgba(255,255,255,.1);
     color:#fff;
-    outline: none;
+    outline:none;
   }
   nav.links a.cta{
-    background:var(--brass);
-    color:var(--ink);
+    background:var(--blue);
+    color:#fff;
     font-weight:600;
+    display:inline-flex; align-items:center; gap:.5em;
   }
-  nav.links a.cta:hover{ background:#c9a066; }
+  nav.links a.cta:hover{ background:var(--blue-light); }
 
   .menu-toggle{
     display:none;
@@ -147,39 +136,72 @@
 
   /* Hero */
   .hero{
-    background:
-      repeating-linear-gradient(to bottom, transparent 0 39px, rgba(255,255,255,.045) 39px 40px),
-      linear-gradient(160deg, var(--ink) 0%, var(--ink-soft) 65%, #163a58 100%);
-    color:#fff;
-    padding:96px 24px 88px;
-    position:relative;
+    background:var(--paper);
+    padding:88px 24px 72px;
     overflow:hidden;
   }
-  .hero .wrap{ position:relative; z-index:2; }
-  .hero-eyebrow{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:.75rem;
-    letter-spacing:.16em;
-    text-transform:uppercase;
-    color:var(--brass);
-    margin-bottom:20px;
-    display:flex; align-items:center; gap:.7em;
+  .hero .wrap{
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:56px;
+    align-items:center;
   }
-  .hero-eyebrow::before{ content:"§"; font-size:1rem; }
-  .hero h2{
-    color:#fff;
-    font-size:clamp(2.4rem, 5vw, 3.6rem);
-    line-height:1.08;
-    max-width:14ch;
-    margin-bottom:.35em;
+  .hero h1{
+    font-size:clamp(2rem, 3.6vw, 2.7rem);
+    line-height:1.18;
+    margin-bottom:.5em;
   }
+  .hero h1 .accent{ color:var(--blue); }
   .hero p.lead{
     max-width:52ch;
-    font-size:1.15rem;
-    color:rgba(255,255,255,.82);
+    font-size:1.08rem;
+    color:var(--text-soft);
     margin-bottom:2em;
   }
-  .hero-ctas{ display:flex; gap:14px; flex-wrap:wrap; }
+  .segments{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .segment-card{
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:20px;
+    background:var(--bg);
+  }
+  .segment-card .head{ display:flex; align-items:center; gap:10px; margin-bottom:.6em; }
+  .segment-card .icon{
+    width:34px; height:34px;
+    display:flex; align-items:center; justify-content:center;
+    color:var(--blue);
+    flex:none;
+  }
+  .segment-card .icon svg{ width:22px; height:22px; }
+  .segment-card h3{ font-size:1rem; color:var(--navy); margin:0; }
+  .segment-card p{ font-size:.9rem; color:var(--text-soft); margin:0; }
+
+  /* Hero visual: motivo "forecast" — línea de tendencia ascendente */
+  .hero-visual{
+    background:linear-gradient(160deg, var(--navy) 0%, var(--navy-soft) 60%, #163a7a 100%);
+    border-radius:16px;
+    padding:36px;
+    color:#fff;
+    position:relative;
+    min-height:340px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+  }
+  .hero-visual .tag{
+    font-size:.7rem; letter-spacing:.16em; text-transform:uppercase;
+    color:rgba(255,255,255,.6);
+  }
+  .hero-visual svg{ width:100%; height:auto; margin:12px 0; }
+  .hero-visual .metrics{ display:flex; gap:24px; }
+  .hero-visual .metric .num{ font-family:'Fraunces', serif; font-size:1.6rem; font-weight:600; color:var(--blue-light); display:block; }
+  .hero-visual .metric .label{ font-size:.78rem; color:rgba(255,255,255,.65); }
+
+  @media (max-width:900px){
+    .hero .wrap{ grid-template-columns:1fr; }
+    .segments{ grid-template-columns:1fr; }
+  }
+
   .btn{
     display:inline-flex; align-items:center; gap:.5em;
     padding:14px 26px;
@@ -187,82 +209,67 @@
     text-decoration:none;
     font-weight:600;
     font-size:.98rem;
-    transition:transform .15s ease, box-shadow .15s ease, background .2s;
+    transition:transform .15s ease, background .2s;
     border:1px solid transparent;
     cursor:pointer;
   }
-  .btn-primary{ background:var(--brass); color:var(--ink); }
-  .btn-primary:hover{ background:#c9a066; transform:translateY(-2px); }
-  .btn-ghost{ border-color:rgba(255,255,255,.35); color:#fff; }
-  .btn-ghost:hover{ background:rgba(255,255,255,.1); transform:translateY(-2px); }
-
-  .hero-stats{
-    display:flex; gap:0; margin-top:64px;
-    border-top:1px solid rgba(255,255,255,.15);
-    padding-top:28px;
-    flex-wrap:wrap;
-  }
-  .stat{ flex:1; min-width:150px; padding-right:24px; }
-  .stat .num{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:1.9rem;
-    font-weight:600;
-    color:var(--brass);
-    display:block;
-  }
-  .stat .label{ font-size:.85rem; color:rgba(255,255,255,.7); margin-top:4px; }
+  .btn svg{ width:18px; height:18px; }
+  .btn-primary{ background:var(--blue); color:#fff; }
+  .btn-primary:hover{ background:var(--blue-light); transform:translateY(-2px); }
+  .btn-ghost{ border-color:var(--line); color:var(--navy); background:transparent; }
+  .btn-ghost:hover{ background:var(--bg); transform:translateY(-2px); }
+  .hero-ctas{ display:flex; gap:14px; flex-wrap:wrap; margin-bottom:36px; }
 
   /* Sections */
   section{ padding:88px 24px; }
-  .section-head{ max-width:640px; margin:0 auto 56px; text-align:left; }
+  .section-head{ max-width:640px; margin:0 auto 48px; text-align:left; }
   .section-head.center{ text-align:center; margin-left:auto; margin-right:auto; }
-  .section-head h2{ font-size:clamp(1.9rem,3vw,2.4rem); }
+  .section-head h2{ font-size:clamp(1.9rem,3vw,2.3rem); }
   .section-head p{ color:var(--text-soft); font-size:1.05rem; }
 
-  /* Servicios como asientos de un libro contable */
+  /* Servicios */
   #servicios{ background:var(--paper); }
-  .ledger{ border-top:1px solid var(--line); }
-  .ledger-row{
+  .services-grid{
     display:grid;
-    grid-template-columns:96px 1fr 140px;
-    gap:24px;
-    align-items:start;
-    padding:28px 0;
+    grid-template-columns:1fr 1fr;
+    gap:0 48px;
+  }
+  .service{
+    display:flex; gap:20px;
+    padding:26px 0;
     border-bottom:1px solid var(--line);
-    transition:background .2s;
   }
-  .ledger-row:hover{ background:rgba(184,147,90,.06); }
-  .ledger-code{
-    font-family:'IBM Plex Mono', monospace;
-    color:var(--brass-dark);
-    font-weight:600;
-    font-size:1.05rem;
-    padding-top:2px;
+  .service .icon{
+    width:56px; height:56px;
+    border-radius:50%;
+    border:1.5px solid var(--blue);
+    color:var(--blue);
+    display:flex; align-items:center; justify-content:center;
+    flex:none;
   }
-  .ledger-body h3{ font-size:1.2rem; margin-bottom:.35em; }
-  .ledger-body p{ color:var(--text-soft); margin:0; max-width:56ch; }
-  .ledger-tag{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:.72rem;
+  .service .icon svg{ width:26px; height:26px; }
+  .service .num{
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    color:var(--blue);
+    font-size:1.3rem;
+    display:block;
+    margin-bottom:.15em;
+  }
+  .service h3{
+    font-size:.98rem;
+    letter-spacing:.02em;
     text-transform:uppercase;
-    letter-spacing:.08em;
-    color:var(--teal);
-    background:rgba(18,59,54,.08);
-    padding:6px 10px;
-    border-radius:var(--radius);
-    justify-self:start;
-    white-space:nowrap;
+    margin-bottom:.4em;
+    color:var(--navy);
   }
-  @media (max-width:640px){
-    .ledger-row{ grid-template-columns:56px 1fr; }
-    .ledger-tag{ grid-column:2; margin-top:8px; }
+  .service p{ color:var(--text-soft); margin:0; font-size:.95rem; }
+  @media (max-width:860px){
+    .services-grid{ grid-template-columns:1fr; }
   }
 
   /* Nosotros */
-  #nosotros{
-    background:var(--ink);
-    color:#fff;
-  }
+  #nosotros{ background:var(--navy); color:#fff; }
   #nosotros .grid{
     display:grid;
     grid-template-columns:1.1fr 1fr;
@@ -271,7 +278,7 @@
   }
   #nosotros h2{ color:#fff; }
   #nosotros p{ color:rgba(255,255,255,.78); font-size:1.05rem; }
-  .pillars{ display:grid; gap:20px; }
+  .pillars{ display:grid; gap:18px; }
   .pillar{
     display:flex; gap:16px;
     padding:20px;
@@ -280,10 +287,10 @@
     background:rgba(255,255,255,.03);
   }
   .pillar .mark{
-    font-family:'IBM Plex Mono', monospace;
-    color:var(--brass);
-    font-weight:600;
-    font-size:.95rem;
+    font-family:'Fraunces', serif;
+    color:var(--blue-light);
+    font-weight:700;
+    font-size:1.1rem;
   }
   .pillar h4{ color:#fff; font-size:1.02rem; margin-bottom:.25em; }
   .pillar p{ margin:0; font-size:.92rem; color:rgba(255,255,255,.65); }
@@ -292,35 +299,37 @@
   }
 
   /* Contacto */
-  #contacto{ background:var(--paper); }
+  #contacto{ background:var(--bg); }
   .contact-shell{
     display:grid;
     grid-template-columns:1fr 1.2fr;
     gap:48px;
-    background:var(--parchment);
+    background:var(--paper);
     border:1px solid var(--line);
-    border-radius:8px;
+    border-radius:16px;
     padding:48px;
   }
   .contact-info h3{ font-size:1.3rem; }
   .contact-info p{ color:var(--text-soft); }
   .contact-line{
     display:flex; align-items:center; gap:12px;
-    margin-top:18px;
+    margin-top:16px;
     font-size:.95rem;
+    text-decoration:none;
+    color:var(--text);
   }
+  .contact-line:hover{ color:var(--blue); }
   .contact-line .ic{
-    width:34px; height:34px;
+    width:36px; height:36px;
     display:flex; align-items:center; justify-content:center;
-    background:var(--ink); color:var(--brass);
+    background:var(--navy); color:#fff;
     border-radius:50%;
     flex:none;
   }
+  .contact-line .ic svg{ width:18px; height:18px; }
   form{ display:grid; gap:16px; }
   .field{ display:grid; gap:6px; }
-  label{
-    font-size:.82rem; font-weight:600; color:var(--text);
-  }
+  label{ font-size:.82rem; font-weight:600; color:var(--text); }
   input, textarea{
     font-family:'Inter', sans-serif;
     font-size:.98rem;
@@ -333,20 +342,18 @@
   }
   input:focus, textarea:focus{
     outline:none;
-    border-color:var(--brass);
-    box-shadow:0 0 0 3px rgba(184,147,90,.18);
+    border-color:var(--blue);
+    box-shadow:0 0 0 3px rgba(27,87,214,.15);
   }
-  .error-msg{
-    font-size:.8rem; color:#B3261E; min-height:1.1em;
-  }
-  .field.invalid input, .field.invalid textarea{ border-color:#B3261E; }
+  .error-msg{ font-size:.8rem; color:#C0362C; min-height:1.1em; }
+  .field.invalid input, .field.invalid textarea{ border-color:#C0362C; }
   button[type="submit"]{
     justify-self:start;
-    background:var(--ink);
+    background:var(--navy);
     color:#fff;
     border:none;
   }
-  button[type="submit"]:hover{ background:var(--ink-soft); transform:translateY(-2px); }
+  button[type="submit"]:hover{ background:var(--navy-soft); transform:translateY(-2px); }
   .form-status{
     font-size:.9rem;
     padding:12px 14px;
@@ -354,20 +361,43 @@
     display:none;
   }
   .form-status.show{ display:block; }
-  .form-status.ok{ background:rgba(18,59,54,.1); color:var(--teal); }
+  .form-status.ok{ background:rgba(27,87,214,.1); color:var(--blue); }
 
   @media (max-width:860px){
     .contact-shell{ grid-template-columns:1fr; padding:32px; }
   }
 
   footer{
-    background:var(--ink);
-    color:rgba(255,255,255,.6);
-    text-align:center;
-    padding:28px 24px;
-    font-size:.85rem;
+    background:var(--navy);
+    color:rgba(255,255,255,.75);
+    padding:26px 24px;
   }
-  footer a{ color:var(--brass); text-decoration:none; }
+  footer .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    flex-wrap:wrap; gap:16px;
+  }
+  .footer-brand{ display:flex; align-items:center; gap:12px; }
+  .footer-brand .brand-name{ font-size:1.1rem; }
+  .footer-social{ display:flex; align-items:center; gap:12px; }
+  .footer-social a{
+    width:38px; height:38px;
+    border-radius:50%;
+    background:rgba(255,255,255,.08);
+    display:flex; align-items:center; justify-content:center;
+    color:#fff;
+    text-decoration:none;
+    transition:background .2s, transform .2s;
+  }
+  .footer-social a:hover{ background:var(--blue); transform:translateY(-2px); }
+  .footer-social a svg{ width:18px; height:18px; }
+  .footer-bottom{
+    text-align:center;
+    font-size:.8rem;
+    color:rgba(255,255,255,.45);
+    margin-top:20px;
+    padding-top:20px;
+    border-top:1px solid rgba(255,255,255,.08);
+  }
 
   /* Reveal on scroll */
   .reveal{ opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease; }
@@ -382,7 +412,7 @@
     .menu-toggle{ display:inline-flex; }
     nav.links{
       position:absolute; top:100%; left:0; right:0;
-      background:var(--ink);
+      background:var(--navy);
       flex-direction:column;
       align-items:stretch;
       padding:8px 24px 20px;
@@ -391,11 +421,10 @@
     }
     nav.links.open{ display:flex; }
     nav.links a{ padding:14px 8px; }
-    .hero{ padding:64px 20px 56px; }
   }
 
   a[href]:focus-visible, button:focus-visible{
-    outline:2px solid var(--brass);
+    outline:2px solid var(--blue);
     outline-offset:2px;
   }
 </style>
@@ -406,10 +435,18 @@
 <header>
   <div class="nav wrap">
     <a href="#inicio" class="brand">
-      <img src="logo/logo2.jpeg" alt="Logo de FORESCAT">
+      <svg class="logo-mark" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="fGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#4C86FF"/>
+            <stop offset="1" stop-color="#0B2F73"/>
+          </linearGradient>
+        </defs>
+        <path d="M8 2 L8 38 L16 34 L16 24 L28 18 L28 10 L16 16 L16 10 L30 4 L30 2 Z" fill="url(#fGrad)"/>
+      </svg>
       <span>
-        <span class="brand-name">FORESCAT</span>
-        <span class="brand-tag">Asesoría financiera y contable</span>
+        <span class="brand-name">FORECAST</span>
+        <span class="brand-tag">Consultor Contable</span>
       </span>
     </a>
     <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" id="menuToggle">
@@ -419,24 +456,58 @@
       <a href="#inicio">Inicio</a>
       <a href="#servicios">Servicios</a>
       <a href="#nosotros">Nosotros</a>
-      <a href="#contacto" class="cta">Escribinos</a>
+      <a href="#contacto">Contacto</a>
+      <a href="https://wa.me/595995633575" target="_blank" rel="noopener" class="cta">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-1 1.1-.2.2-.4.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.1-1.4-.1-.1-.2-.2-.5-.3z"/><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm5.9 15.4A8.4 8.4 0 0 1 12 20.4a8.3 8.3 0 0 1-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.4 8.4 0 1 1 20.4 12a8.3 8.3 0 0 1-2.5 5.4z"/></svg>
+        WhatsApp
+      </a>
     </nav>
   </div>
 </header>
 
 <section id="inicio" class="hero">
   <div class="wrap">
-    <div class="hero-eyebrow">Registro Nº 001 · Desde Paraguay</div>
-    <h2>Tus números, claros y en orden.</h2>
-    <p class="lead">Acompañamos a empresas y emprendedores con contabilidad, impuestos y gestión laboral, para que tomes decisiones con información confiable, no con suposiciones.</p>
-    <div class="hero-ctas">
-      <a href="#servicios" class="btn btn-primary">Ver servicios</a>
-      <a href="#contacto" class="btn btn-ghost">Hablar con un asesor</a>
+    <div>
+      <span class="eyebrow">Forecast Consultor Contable</span>
+      <h1>Asesoría contable, fiscal y administrativa <span class="accent">con confianza y enfoque.</span></h1>
+      <p class="lead">Brindamos asesoría contable, fiscal, laboral y administrativa a empresas y personas físicas, para que tomes decisiones con seguridad y enfoque.</p>
+      <div class="hero-ctas">
+        <a href="#servicios" class="btn btn-primary">Ver servicios</a>
+        <a href="#contacto" class="btn btn-ghost">Hablar con un asesor</a>
+      </div>
+      <div class="segments">
+        <div class="segment-card">
+          <div class="head">
+            <span class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 21V8l8-5 8 5v13"/><path d="M9 21v-6h6v6"/><path d="M4 21h16"/></svg>
+            </span>
+            <h3>Para empresas</h3>
+          </div>
+          <p>Te ayudamos a optimizar recursos, cumplir con tus obligaciones y crecer de manera sostenible.</p>
+        </div>
+        <div class="segment-card">
+          <div class="head">
+            <span class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+            </span>
+            <h3>Para personas físicas</h3>
+          </div>
+          <p>Te asesoramos en tus impuestos personales para que pagues lo justo y aproveches beneficios fiscales.</p>
+        </div>
+      </div>
     </div>
-    <div class="hero-stats">
-      <div class="stat"><span class="num">6</span><span class="label">áreas de asesoría</span></div>
-      <div class="stat"><span class="num">100%</span><span class="label">cumplimiento normativo</span></div>
-      <div class="stat"><span class="num">24h</span><span class="label">tiempo de respuesta</span></div>
+
+    <div class="hero-visual reveal">
+      <span class="tag">Tendencia · Proyección financiera</span>
+      <svg viewBox="0 0 320 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <polyline points="0,110 45,90 90,95 135,60 180,68 225,30 270,38 320,10" fill="none" stroke="#4C86FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="320" cy="10" r="5" fill="#4C86FF"/>
+      </svg>
+      <div class="metrics">
+        <div class="metric"><span class="num">6</span><span class="label">áreas de asesoría</span></div>
+        <div class="metric"><span class="num">100%</span><span class="label">cumplimiento normativo</span></div>
+        <div class="metric"><span class="num">24h</span><span class="label">tiempo de respuesta</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -445,57 +516,57 @@
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow">Servicios</span>
-      <h2>Un plan de cuentas para cada necesidad</h2>
-      <p>Cada servicio funciona como un asiento en tu plan de cuentas: ordenado, identificable y siempre disponible cuando lo necesitás.</p>
+      <h2>Todo lo que tu negocio necesita, en un solo lugar</h2>
+      <p>Seis áreas de asesoría pensadas para acompañar cada etapa de tu empresa o de tu situación personal.</p>
     </div>
-    <div class="ledger reveal">
-      <div class="ledger-row">
-        <span class="ledger-code">1010</span>
-        <div class="ledger-body">
-          <h3>Contabilidad</h3>
-          <p>Gestión y análisis financiero confiable, con estados contables claros para decidir a tiempo.</p>
+    <div class="services-grid reveal">
+      <div class="service">
+        <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="3" width="14" height="18" rx="1.5"/><path d="M9 12v4M12 9v7M15 14v2"/></svg></span>
+        <div>
+          <span class="num">01</span>
+          <h3>Servicios contables</h3>
+          <p>Contabilidad precisa y oportuna para una gestión financiera confiable y transparente.</p>
         </div>
-        <span class="ledger-tag">Mensual</span>
       </div>
-      <div class="ledger-row">
-        <span class="ledger-code">1020</span>
-        <div class="ledger-body">
-          <h3>Impuestos</h3>
-          <p>Planificación fiscal y cumplimiento normativo, para que ninguna presentación se te pase por alto.</p>
-        </div>
-        <span class="ledger-tag">Recurrente</span>
-      </div>
-      <div class="ledger-row">
-        <span class="ledger-code">1030</span>
-        <div class="ledger-body">
-          <h3>Laboral</h3>
-          <p>Asesoría en nóminas y obligaciones laborales, cuidando a tu equipo y a tu empresa por igual.</p>
-        </div>
-        <span class="ledger-tag">Mensual</span>
-      </div>
-      <div class="ledger-row">
-        <span class="ledger-code">1040</span>
-        <div class="ledger-body">
-          <h3>Administración</h3>
-          <p>Optimización de procesos administrativos, para que el papeleo deje de robarte tiempo operativo.</p>
-        </div>
-        <span class="ledger-tag">A medida</span>
-      </div>
-      <div class="ledger-row">
-        <span class="ledger-code">1050</span>
-        <div class="ledger-body">
+      <div class="service">
+        <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="10" cy="10" r="6"/><path d="M20 20l-5.2-5.2"/></svg></span>
+        <div>
+          <span class="num">02</span>
           <h3>Auditoría</h3>
-          <p>Evaluación y control de riesgos financieros, con recomendaciones concretas y accionables.</p>
+          <p>Evaluamos, analizamos y fortalecemos la información financiera de tu empresa.</p>
         </div>
-        <span class="ledger-tag">Puntual</span>
       </div>
-      <div class="ledger-row">
-        <span class="ledger-code">1060</span>
-        <div class="ledger-body">
-          <h3>Comercio internacional</h3>
-          <p>Estrategias contables para operaciones globales, con foco en cumplimiento y eficiencia fiscal.</p>
+      <div class="service">
+        <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="3" width="14" height="18" rx="1.5"/><circle cx="10" cy="10" r="1.6"/><circle cx="14" cy="15" r="1.6"/><path d="M9 16l6-7"/></svg></span>
+        <div>
+          <span class="num">03</span>
+          <h3>Impuestos</h3>
+          <p>Planificación y cumplimiento fiscal para empresas y personas físicas. Optimizamos tu carga impositiva de forma legal y eficiente.</p>
         </div>
-        <span class="ledger-tag">A medida</span>
+      </div>
+      <div class="service">
+        <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="8" width="16" height="12" rx="1.5"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg></span>
+        <div>
+          <span class="num">04</span>
+          <h3>Administración</h3>
+          <p>Estrategias administrativas que mejoran procesos y generan eficiencia.</p>
+        </div>
+      </div>
+      <div class="service">
+        <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 20c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5M15 14.5c2.6.3 4.2 1.9 4.2 4.3"/></svg></span>
+        <div>
+          <span class="num">05</span>
+          <h3>Laboral</h3>
+          <p>Gestión integral del talento humano cumpliendo con la normativa vigente.</p>
+        </div>
+      </div>
+      <div class="service">
+        <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8"/><path d="M4 12h16M12 4c2.5 2.3 2.5 13.7 0 16M12 4c-2.5 2.3-2.5 13.7 0 16"/></svg></span>
+        <div>
+          <span class="num">06</span>
+          <h3>Asesoramiento de comercio internacional</h3>
+          <p>Te ayudamos a expandir tu negocio más allá de fronteras con seguridad y estrategia.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -504,22 +575,22 @@
 <section id="nosotros">
   <div class="wrap grid">
     <div class="reveal">
-      <span class="eyebrow" style="color:var(--brass)">Nosotros</span>
-      <h2>Precisión, confianza y visión global</h2>
-      <p>FORESCAT acompaña a empresas y emprendedores en su crecimiento, con la misma disciplina que exige un buen balance: todo registrado, todo verificable, nada librado al azar.</p>
+      <span class="eyebrow" style="color:var(--blue-light)">Nosotros</span>
+      <h2>Confianza y enfoque en cada decisión</h2>
+      <p>En Forecast acompañamos a empresas y personas físicas con asesoría clara, para que cada decisión financiera se tome con seguridad y una visión de futuro.</p>
     </div>
     <div class="pillars reveal">
       <div class="pillar">
         <span class="mark">01</span>
-        <div><h4>Confianza</h4><p>Información clara, sin letra chica ni sorpresas de último momento.</p></div>
+        <div><h4>Confianza</h4><p>Información clara y transparente, sin sorpresas de último momento.</p></div>
       </div>
       <div class="pillar">
         <span class="mark">02</span>
-        <div><h4>Precisión</h4><p>Cada cifra revisada dos veces antes de llegar a tus manos.</p></div>
+        <div><h4>Enfoque</h4><p>Cada recomendación pensada para tu situación particular, no una plantilla genérica.</p></div>
       </div>
       <div class="pillar">
         <span class="mark">03</span>
-        <div><h4>Visión global</h4><p>Criterio local con estándares que resisten cualquier auditoría.</p></div>
+        <div><h4>Visión de futuro</h4><p>Proyectamos, no solo registramos: te ayudamos a anticipar lo que viene.</p></div>
       </div>
     </div>
   </div>
@@ -536,15 +607,22 @@
       <div class="contact-info">
         <h3>Otras formas de escribirnos</h3>
         <p>Si preferís, también podés escribirnos directamente por estos medios.</p>
-        <div class="contact-line">
-          <span class="ic">✆</span> +595 000 000 000
-        </div>
-        <div class="contact-line">
-          <span class="ic">✉</span> contacto@forescat.com
-        </div>
-        <div class="contact-line">
-          <span class="ic">◎</span> @forescat
-        </div>
+        <a class="contact-line" href="https://wa.me/595995633575" target="_blank" rel="noopener">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-1 1.1-.2.2-.4.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.1-1.4-.1-.1-.2-.2-.5-.3z"/><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm5.9 15.4A8.4 8.4 0 0 1 12 20.4a8.3 8.3 0 0 1-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.4 8.4 0 1 1 20.4 12a8.3 8.3 0 0 1-2.5 5.4z"/></svg></span>
+          0995 633575
+        </a>
+        <a class="contact-line" href="https://instagram.com/forecast.consultor" target="_blank" rel="noopener">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></span>
+          @forecast.consultor
+        </a>
+        <a class="contact-line" href="#" target="_blank" rel="noopener">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M12 17v-4.5c0-1.4 1-2.5 2.3-2.5s2.2 1 2.2 2.5V17"/></svg></span>
+          Forecast Consultor Contable (LinkedIn)
+        </a>
+        <a class="contact-line" href="#" target="_blank" rel="noopener">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 3h-2a4 4 0 0 0-4 4v3H7v4h2v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></span>
+          Forecast Consultor Contable (Facebook)
+        </a>
       </div>
       <form id="contactForm" novalidate>
         <div class="field" id="nameField">
@@ -570,7 +648,32 @@
 </section>
 
 <footer>
-  <p>&copy; 2026 FORESCAT — Todos los derechos reservados</p>
+  <div class="wrap">
+    <div class="footer-brand">
+      <svg class="logo-mark" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M8 2 L8 38 L16 34 L16 24 L28 18 L28 10 L16 16 L16 10 L30 4 L30 2 Z" fill="url(#fGrad)"/>
+      </svg>
+      <span>
+        <span class="brand-name">FORECAST</span>
+        <span class="brand-tag">Consultor Contable</span>
+      </span>
+    </div>
+    <div class="footer-social">
+      <a href="https://wa.me/595995633575" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-1 1.1-.2.2-.4.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.1-1.4-.1-.1-.2-.2-.5-.3z"/><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm5.9 15.4A8.4 8.4 0 0 1 12 20.4a8.3 8.3 0 0 1-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.4 8.4 0 1 1 20.4 12a8.3 8.3 0 0 1-2.5 5.4z"/></svg>
+      </a>
+      <a href="https://instagram.com/forecast.consultor" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+      </a>
+      <a href="#" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M12 17v-4.5c0-1.4 1-2.5 2.3-2.5s2.2 1 2.2 2.5V17"/></svg>
+      </a>
+      <a href="#" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 3h-2a4 4 0 0 0-4 4v3H7v4h2v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </a>
+    </div>
+  </div>
+  <p class="footer-bottom">&copy; 2026 Forecast Consultor Contable — Todos los derechos reservados</p>
 </footer>
 
 <script>
